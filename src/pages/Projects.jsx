@@ -5,8 +5,8 @@ function About({ setProfile }) {
     const [Bio, setBio] = useState("");
 
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = () => {
+    preventDefault();
     setProfile({ name: "", bio: "" });
     alert("Profile Updated!");
   };
@@ -15,8 +15,8 @@ function About({ setProfile }) {
     <div>
       <h2>Update Profile</h2>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Name" onChange={(e) => setName(e)} /><br/><br/>
-        <textarea placeholder="Bio" onChange={(e) => setBio()} /><br/><br/>
+        <input type="text" placeholder="Name" onChange={() => setName()} /><br/><br/>
+        <textarea placeholder="Bio" onChange={() => setBio()} /><br/><br/>
         <button type="submit">Save</button>
       </form>
     </div>
